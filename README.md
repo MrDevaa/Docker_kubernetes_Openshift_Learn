@@ -1,1 +1,0 @@
-# Docker_kubernetes_Openshift_Learn
