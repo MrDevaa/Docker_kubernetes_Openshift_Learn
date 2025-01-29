@@ -26,3 +26,28 @@
 - Grâce à son architecture légère et à sa capacité à créer des environnements isolés, Docker permet aux développeurs de déployer des applications rapidement et de manière cohérente sur différentes plateformes.
 - Cependant, il est important de reconnaître ses limitations, notamment pour les applications nécessitant des performances élevées ou une sécurité renforcée.
 - En intégrant Docker dans les pratiques de développement, les équipes peuvent améliorer leur efficacité et leur collaboration, tout en adoptant des méthodologies modernes comme Agile et CI/CD.
+
+## construction et éxécution d'images de conteneurs 
+
+## Création d'une image de conteneur : 
+
+- Utilisez un Dockerfile pour définir les instructions nécessaires à la création d'une image.
+
+
+## Commandes Docker essentielles :
+
+- build : Crée une image de conteneur à partir d'un Dockerfile. 
+- images : Liste toutes les images disponibles.
+- run : Crée et exécute un conteneur à partir d'une image.
+- push : Stocke les images dans un registre configuré.
+- pull : Récupère des images depuis un registre configuré.
+
+
+## Vérification de l'image :
+
+- Utilisez la commande docker images pour afficher les détails de l'image créée, comme le nom du dépôt et la taille.
+
+
+## Exécution du conteneur : 
+
+- La commande docker run exécute le conteneur, affichant par exemple "hello world".
