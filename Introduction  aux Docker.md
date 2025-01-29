@@ -51,3 +51,27 @@
 ## Exécution du conteneur : 
 
 - La commande docker run exécute le conteneur, affichant par exemple "hello world".
+
+## Objets Docker : 
+
+- La vidéo présente plusieurs objets essentiels de Docker, notamment les Dockerfiles, les images, les conteneurs, les réseaux, et les volumes de stockage.
+
+## Dockerfile : 
+
+- C'est un fichier texte contenant des instructions pour créer une image. Il commence toujours par une instruction FROM qui définit l'image de base. Les instructions RUN exécutent des commandes, et CMD définit une commande par défaut.
+
+## Images Docker : 
+
+- Ce sont des modèles en lecture seule utilisés pour créer des conteneurs. Chaque instruction dans le Dockerfile crée une nouvelle couche dans l'image. Les images peuvent partager des couches pour économiser de l'espace disque.
+
+## Conteneurs Docker : 
+
+- Un conteneur est une instance exécutable d'une image. Les conteneurs sont isolés les uns des autres et peuvent se connecter à plusieurs réseaux. Les données ne persistent pas par défaut, mais les volumes et les montages de liaison permettent de conserver les données.
+
+## Nommage des images : 
+
+- Le nom d'une image suit un format spécifique : nom d'hôte, dépôt et tag. Par exemple, docker.io/ubuntu:18.04 indique l'image Ubuntu version 18.04.
+
+## Réseaux et stockage :
+
+- Docker utilise des réseaux pour isoler les communications entre conteneurs et des volumes pour persister les données.
