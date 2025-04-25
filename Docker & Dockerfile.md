@@ -37,7 +37,7 @@ Pour commencer, spécifiez l'image de base en utilisant l'instruction FROM. Dans
 FROM node:14
 ```
 
-Copied!
+
 FROM: Spécifie l'image de base pour le conteneur Docker.
 node:14: Récupère l'image officielle de Node.js avec la version 14 depuis le registre Docker.
 
@@ -49,7 +49,7 @@ ENV NODE_ENV=production
 ENV PORT=3000
 ```
 
-Copied!
+
 ENV: Définit les variables d'environnement à l'intérieur du conteneur Docker.
 NODE_ENV=production: Définit l'environnement Node.js sur production.
 PORT=3000: Définit le port sur lequel l'application Node.js écoutera.
@@ -61,7 +61,7 @@ Ensuite, spécifiez le répertoire de travail à l'intérieur du conteneur en ut
 WORKDIR /usr/src/app
 ```
 
-Copied!
+
 WORKDIR: Définit le répertoire de travail pour les instructions suivantes, simplifiant les références de chemin de fichier.
 /usr/src/app: Le répertoire à l'intérieur du conteneur pour stocker le code de votre application, le gardant organisé et facilement accessible.
 
@@ -72,7 +72,7 @@ Après avoir défini le répertoire de travail, utilisez l'instruction COPY pour
 COPY package*.json ./
 ```
 
-Copied!
+
 COPY: Copie des fichiers de votre machine locale vers le conteneur.
 package*.json ./: Copie à la fois les fichiers package.json et package-lock.json.
 
@@ -83,7 +83,7 @@ Avec les fichiers de package copiés, exécutez l'instruction RUN pour installer
 RUN npm install --production
 ```
 
-Copied!
+
 RUN : Exécute des commandes dans le conteneur pendant le processus de construction.
 npm install –production : Installe les dépendances listées dans package.json sans les devDependencies.
 
@@ -94,7 +94,7 @@ Une fois les dépendances installées, copiez le reste du code de l'application 
 COPY . .
 ```
 
-Copied!
+
 COPY . .: Copie tous les fichiers et répertoires du répertoire actuel sur l'hôte local vers le répertoire actuel dans le conteneur Docker.
 
 #### 7 : Ajouter des fichiers supplémentaires
@@ -105,7 +105,7 @@ De plus, utilisez l'instruction ADD pour inclure tout fichier supplémentaire. I
 ADD public/index.html /app/public/index.html
 ```
 
-Copied!
+
 public/index.html: Chemin vers le fichier ou le répertoire sur la machine hôte.
 /app/public/index.html: Chemin où vous souhaitez ajouter le fichier ou le répertoire à l'intérieur de l'image Docker.
 
@@ -116,7 +116,7 @@ Ensuite, informez Docker que le conteneur écoute sur le port spécifié avec l'
 EXPOSE $PORT
 ```
 
-Copied!
+
 EXPOSE: Informe Docker que le conteneur écoutera sur le port spécifié à l'exécution.
 $PORT: La variable d'environnement représentant le numéro de port défini précédemment.
 
@@ -127,7 +127,7 @@ Définissez la commande par défaut à exécuter lorsque le conteneur démarre e
 CMD ["node", "app.js"]
 ```
 
-Copied!
+
 CMD: Cette instruction spécifie la commande par défaut et/ou les paramètres à exécuter au point d'entrée du conteneur.
 ["node", "app.js"]: Ce tableau spécifie la commande à exécuter et tout argument pour cette commande. Dans ce cas, il indique à Docker d'exécuter la commande node avec app.js comme argument.
 
@@ -142,7 +142,7 @@ LABEL description="Node.js application Docker image"
 LABEL maintainer="Your Name"
 ```
 
-Copied!
+
 LABEL: Ajoute des métadonnées à l'image Docker.
 version="1.0": Spécifie la version de l'image Docker.
 description="Node.js application Docker image" : Fournit une description de l'image Docker.
@@ -155,7 +155,7 @@ Pour s'assurer que le conteneur fonctionne correctement, définissez un health c
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 CMD curl -fs http://localhost:$PORT || exit 1
 ```
 
-Copied!
+
 HEALTHCHECK: Configure une vérification de l'état pour s'assurer que le conteneur fonctionne correctement.
 --interval=30s: Spécifie l'intervalle entre les vérifications de l'état.
 --timeout=10s: Définit le délai d'attente pour chaque vérification de l'état.
@@ -170,7 +170,7 @@ Enfin, pour des raisons de sécurité, définissez un utilisateur non-root avec 
 USER node
 ```
 
-Copied!
+
 USER: Définit l'utilisateur qui exécutera les instructions suivantes dans le Dockerfile.
 node: Spécifie l'utilisateur nommé node pour exécuter les commandes pour des raisons de sécurité.
 
