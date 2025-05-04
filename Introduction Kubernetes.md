@@ -86,3 +86,19 @@ Les objets Kubernetes permettent de **définir l’état souhaité** du cluster 
 | **Job / CronJob**| Exécution ponctuelle ou planifiée de tâches.                         |
 
 ---
+## 💻 Utilisation de `kubectl`
+
+`kubectl` est l’outil en ligne de commande pour interagir avec un cluster Kubernetes.
+
+### 🔹 Commandes courantes :
+
+| Commande                             | Description                                        |
+|--------------------------------------|----------------------------------------------------|
+| `kubectl get pods`                   | Liste les Pods                                     |
+| `kubectl get all`                    | Liste toutes les ressources                        |
+| `kubectl describe pod mon-pod`      | Détails d’un Pod                                   |
+| `kubectl logs mon-pod`              | Logs d’un Pod                                      |
+| `kubectl exec -it mon-pod -- bash`  | Terminal interactif dans le conteneur              |
+| `kubectl apply -f fichier.yaml`     | Crée ou met à jour une ressource                   |
+| `kubectl delete -f fichier.yaml`    | Supprime la ressource définie dans un YAML         |
+| `kubectl scale deployment mon-app --replicas=3` | Met à l’échelle un déploiement         |
