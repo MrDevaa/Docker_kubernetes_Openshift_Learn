@@ -20,3 +20,22 @@ Elle permet de gérer le **cycle de vie complet** des conteneurs : déploiement,
 
 Le leader des outils d’orchestration est **Kubernetes**, développé par Google et aujourd’hui open source.
 
+## 🏗️ Architecture de Kubernetes
+
+L’architecture de Kubernetes repose sur **deux grandes parties** :
+
+### 🧠 1. **Control Plane**
+Le **cerveau** de Kubernetes. Il décide **quoi faire** et supervise l’ensemble du cluster.
+- `kube-apiserver` : point d’entrée principal, reçoit toutes les requêtes (via `kubectl`)
+- `etcd` : base de données clé/valeur qui stocke l’état du cluster
+- `controller-manager` : s’assure que l’état réel correspond à l’état désiré (self-healing)
+- `scheduler` : décide sur quel nœud exécuter un nouveau Pod
+
+---
+### ⚙️ 2. **Nœuds de Travail (Worker Nodes)**
+Ce sont les **serveurs qui exécutent réellement les applications**.
+- `kubelet` : agent sur chaque nœud, communique avec le control plane
+- `kube-proxy` : gère la connectivité réseau entre Pods
+- **Runtime de conteneur** (ex : Docker, containerd) : exécute les conteneurs
+
+---
