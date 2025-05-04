@@ -8,12 +8,11 @@
   
 ---
 
-
-dans le terminal verifier la version de kebectl ;
+- Dans le terminal verifier la version de kebectl ;
 ```bash
 kubectl version
 ```
-## Taches n^1 : Créer un Service Kubernetes en utilisant l'image nginx
+## Taches n°1 : Créer un Service Kubernetes en utilisant l'image nginx
 
 - Un serveur web open-source populaire, nginx est connu pour sa haute performance, sa stabilité et sa faible consommation de ressources. Il peut également fonctionner comme un proxy inverse, un équilibreur de charge et un cache HTTP.
 
@@ -31,7 +30,7 @@ kubectl version
 ```bash
     kubectl get services
 ```
-## Taches n^2 :  Gérer les Pods et Services Kubernetes
+## Taches n°2 :  Gérer les Pods et Services Kubernetes
 
 1. Obtenez la liste des pods
 ```bash
@@ -44,30 +43,31 @@ kubectl version
 3. Étiquetez le pod
 ```bash
      kubectl label pods <pod-name> environment=deployment
-   ```
+```
 4. Afficher les étiquettes
  ```bash
     kubectl get pod <pod-name> --show-labels
  ```
 6. Exécutez un pod de test en utilisant l’image nginx
-   ```bash
+```bash
      kubectl run my-test-pod --image=nginx --restart=Never
-   ```
+```
 8. Afficher les journaux
  ```bash
    kubectl logs <pod-name>
  ```
 
-## Taches n^3: Déploiement d'un StatefulSet
+## Taches n°3: Déploiement d'un StatefulSet
 
 - Un StatefulSet gère le déploiement et la mise à l’échelle d’un ensemble de pods, et maintient une identité persistante pour chacun de leurs Pods, garantissant que chaque Pod a une identité et un stockage persistants.
 
 1.Créez et ouvrez un fichier nommé statefulset.yaml en mode édition.
+```bash
     touch statefulset.yaml
-
+ ```
 2. Ouvrez statefulset.yaml, ajoutez le code suivant, puis enregistrez le fichier :
-   
-      apiVersion: apps/v1
+```bash
+   apiVersion: apps/v1
    kind: StatefulSet
    metadata:
      name: my-statefulset
@@ -96,14 +96,16 @@ kubectl version
          resources:
            requests:
              storage: 1Gi
-
-3. Appliquez la configuration du StatefulSet.
+```
+2. Appliquez la configuration du StatefulSet.
+ ```bash
       kubectl apply -f statefulset.yaml
-
+ ```
 4. Vérifiez que le StatefulSet est créé.
+  ```bash
       kubectl get statefulsets
-
-## Taches n^4: Mise en œuvre d'un DaemonSet
+  ```
+## Taches n°4: Mise en œuvre d'un DaemonSet
 
 -Un DaemonSet garantit qu’une copie d’un Pod spécifique s’exécute sur tous (ou certains) nœuds du cluster. Il est particulièrement utile pour déployer des applications au niveau système qui fournissent des services essentiels à travers les nœuds d’un cluster, tels que la collecte de journaux, la surveillance ou les services réseau.
 
