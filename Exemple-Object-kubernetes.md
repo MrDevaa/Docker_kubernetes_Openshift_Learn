@@ -140,5 +140,5 @@ kubectl version
 ```bash
       kubectl get daemonsets
 ```
-
+## Conclusion
 - Vous avez créé un Service Kubernetes, utilisé diverses commandes kubectl, déployé des StatefulSets pour des applications avec état, et mis en œuvre des DaemonSets pour un déploiement uniforme des pods sur les nœuds du cluster.
