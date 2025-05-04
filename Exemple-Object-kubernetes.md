@@ -102,9 +102,9 @@ kubectl version
       kubectl apply -f statefulset.yaml
  ```
 4. Vérifiez que le StatefulSet est créé.
-  ```bash
+```bash
       kubectl get statefulsets
-  ```
+```
 ## Taches n°4: Mise en œuvre d'un DaemonSet
 
 - Un DaemonSet garantit qu’une copie d’un Pod spécifique s’exécute sur tous (ou certains) nœuds du cluster. Il est particulièrement utile pour déployer des applications au niveau système qui fournissent des services essentiels à travers les nœuds d’un cluster, tels que la collecte de journaux, la surveillance ou les services réseau.
@@ -133,10 +133,10 @@ kubectl version
           image: nginx
   ```
 3. Appliquez le DaemonSet
-   ```bash
+```bash
     kubectl apply -f daemonset.yaml
-    ```
+```
 4. Vérifiez que le DaemonSet a été créé
-  ```bash
+```bash
       kubectl get daemonsets
-  ```
+```
