@@ -1,4 +1,4 @@
-##  une expérience pratique avec Kubernetes, en mettant l’accent sur la création de services, l’utilisation de diverses commandes kubectl, et le déploiement de StatefulSets et DaemonSets.
+## Une expérience pratique avec Kubernetes, en mettant l’accent sur la création de services, l’utilisation de diverses commandes kubectl, et le déploiement de StatefulSets et DaemonSets.
 
 # Objectifs
 - Créer un Service Kubernetes
@@ -12,7 +12,7 @@
 dans le terminal verifier la version de kebectl ;
 ```bash
 kubectl version
-```bash
+```
 ## Taches n^1 : Créer un Service Kubernetes en utilisant l'image nginx
 
 - Un serveur web open-source populaire, nginx est connu pour sa haute performance, sa stabilité et sa faible consommation de ressources. Il peut également fonctionner comme un proxy inverse, un équilibreur de charge et un cache HTTP.
@@ -22,33 +22,37 @@ kubectl version
 1.Créer un Déploiement nommé my-deployment1 en utilisant l’image nginx
 ```bash
     kubectl create deployment < my-deployment1 > --image=nginx
-```bash
+```
 2. Exposer le déploiement en tant que service
-
+```bash
    kubectl expose deployment my-deployment1 --port=80 --type=NodePort --name=my-service1
-
+```
 3. Liste tous les services dans l’espace de noms par défaut. Les services fournissent une adresse IP stable et un nom DNS pour accéder à un ensemble de pods.
-
+```bash
     kubectl get services
-
+```
 ## Taches n^2 :  Gérer les Pods et Services Kubernetes
 
 1. Obtenez la liste des pods
+```bash
    kubectl get pods
-
+```
 2. Afficher les étiquettes
+```bash
     kubectl get pod <pod-name> --show-labels
-
+```
 3. Étiquetez le pod
+```bash
      kubectl label pods <pod-name> environment=deployment
-   
+   ```
 4. Afficher les étiquettes
+5. ```bash
     kubectl get pod <pod-name> --show-labels
-
-5. Exécutez un pod de test en utilisant l’image nginx
+ ```
+6. Exécutez un pod de test en utilisant l’image nginx
      kubectl run my-test-pod --image=nginx --restart=Never
 
-6. Afficher les journaux
+7. Afficher les journaux
    kubectl logs <pod-name>
 
 ## Taches n^3: Déploiement d'un StatefulSet
