@@ -10,9 +10,9 @@
 
 
 dans le terminal verifier la version de kebectl ;
- --- 
+```bash
 kubectl version
----
+```bash
 ## Taches n^1 : Créer un Service Kubernetes en utilisant l'image nginx
 
 - Un serveur web open-source populaire, nginx est connu pour sa haute performance, sa stabilité et sa faible consommation de ressources. Il peut également fonctionner comme un proxy inverse, un équilibreur de charge et un cache HTTP.
