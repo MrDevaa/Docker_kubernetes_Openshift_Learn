@@ -48,11 +48,11 @@ kubectl version
  ```bash
     kubectl get pod <pod-name> --show-labels
  ```
-6. Exécutez un pod de test en utilisant l’image nginx
+5. Exécutez un pod de test en utilisant l’image nginx
 ```bash
      kubectl run my-test-pod --image=nginx --restart=Never
 ```
-8. Afficher les journaux
+6. Afficher les journaux
  ```bash
    kubectl logs <pod-name>
  ```
