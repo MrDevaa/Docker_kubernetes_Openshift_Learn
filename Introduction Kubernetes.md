@@ -69,3 +69,20 @@ Composant	                                            - Rôle
 - Container Runtime	= C’est le moteur qui exécute les conteneurs dans les pods. Le runtime le plus connu est Docker, mais Kubernetes peut aussi utiliser d’autres runtimes comme containerd ou CRI-O.
 
 ---
+## 📦 Les Objets Kubernetes
+
+Les objets Kubernetes permettent de **définir l’état souhaité** du cluster (via des fichiers YAML ou des commandes).
+
+| Objet             | Rôle                                                                 |
+|------------------|----------------------------------------------------------------------|
+| **Pod**          | Plus petite unité. Contient un ou plusieurs conteneurs.              |
+| **Deployment**   | Gère les Pods (mise à l’échelle, mises à jour, auto-recovery).       |
+| **ReplicaSet**   | Assure un nombre stable de Pods. Souvent géré par un Deployment.     |
+| **Service**      | Fournit une IP stable et du load balancing pour des Pods.            |
+| **Ingress**      | Routage HTTP/HTTPS vers différents services.                         |
+| **ConfigMap**    | Stocke des configurations non sensibles.                             |
+| **Secret**       | Stocke des données sensibles (ex : clés API).                        |
+| **PVC / PV**     | Gère le stockage persistant.                                         |
+| **Job / CronJob**| Exécution ponctuelle ou planifiée de tâches.                         |
+
+---
