@@ -132,11 +132,11 @@ kubectl version
         - name: my-daemonset
           image: nginx
   ```
-4. Appliquez le DaemonSet
+3. Appliquez le DaemonSet
    ```bash
     kubectl apply -f daemonset.yaml
     ```
-6. Vérifiez que le DaemonSet a été créé
+4. Vérifiez que le DaemonSet a été créé
   ```bash
       kubectl get daemonsets
   ```
