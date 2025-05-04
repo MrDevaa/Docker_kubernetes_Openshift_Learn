@@ -107,7 +107,7 @@ kubectl version
   ```
 ## Taches n°4: Mise en œuvre d'un DaemonSet
 
--Un DaemonSet garantit qu’une copie d’un Pod spécifique s’exécute sur tous (ou certains) nœuds du cluster. Il est particulièrement utile pour déployer des applications au niveau système qui fournissent des services essentiels à travers les nœuds d’un cluster, tels que la collecte de journaux, la surveillance ou les services réseau.
+- Un DaemonSet garantit qu’une copie d’un Pod spécifique s’exécute sur tous (ou certains) nœuds du cluster. Il est particulièrement utile pour déployer des applications au niveau système qui fournissent des services essentiels à travers les nœuds d’un cluster, tels que la collecte de journaux, la surveillance ou les services réseau.
 
 1. Créez un fichier nommé daemonset.yaml et ouvrez-le en mode édition :
 ```bash
