@@ -31,6 +31,15 @@ Le **cerveau** de Kubernetes. Il décide **quoi faire** et supervise l’ensembl
 - `controller-manager` : s’assure que l’état réel correspond à l’état désiré (self-healing)
 - `scheduler` : décide sur quel nœud exécuter un nouveau Pod
 
++----------------------+
+|    Control Plane     |
+|----------------------|
+| kube-apiserver       |
+| etcd                 |
+| kube-scheduler       |
+| kube-controller-mgr  |
++----------------------+
+
 ---
 ### ⚙️ 2. **Nœuds de Travail (Worker Nodes)**
 Ce sont les **serveurs qui exécutent réellement les applications**.
