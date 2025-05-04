@@ -40,6 +40,13 @@ Le **cerveau** de Kubernetes. Il décide **quoi faire** et supervise l’ensembl
 | kube-controller-mgr  |
 -----------------------
 
+Composant	         Rôle
+- kube-apiserver = 	Point d’entrée principal du cluster. Toutes les commandes (kubectl, etc.) passent par lui. Il communique avec les autres composants via une API REST.
+- etcd	 = Base de données clé-valeur distribuée qui stocke l’état complet du cluster (configurations, états des pods, secrets…).
+- kube-scheduler = Décide où les nouveaux pods doivent être déployés (sur quel nœud), en fonction des ressources disponibles et des contraintes.
+- kube-controller-manager	= Supervise et applique l’état désiré. Exemple : si un pod plante, il le recrée. Il gère plusieurs "contrôleurs" (replica controller, job controller, etc.).
+- cloud-controller-manager (optionnel)	= Permet l’intégration avec les fournisseurs cloud (GCP, AWS…). Il gère le provisioning de ressources cloud (load balancers, volumes…).
+
 ---
 ### ⚙️ 2. **Nœuds de Travail (Worker Nodes)**
 Ce sont les **serveurs qui exécutent réellement les applications**.
