@@ -46,14 +46,17 @@ kubectl version
      kubectl label pods <pod-name> environment=deployment
    ```
 4. Afficher les étiquettes
-5. ```bash
+ ```bash
     kubectl get pod <pod-name> --show-labels
  ```
 6. Exécutez un pod de test en utilisant l’image nginx
+   ```bash
      kubectl run my-test-pod --image=nginx --restart=Never
-
-7. Afficher les journaux
+   ```
+8. Afficher les journaux
+ ```bash
    kubectl logs <pod-name>
+ ```
 
 ## Taches n^3: Déploiement d'un StatefulSet
 
