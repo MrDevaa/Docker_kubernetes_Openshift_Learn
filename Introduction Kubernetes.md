@@ -40,7 +40,7 @@ Le **cerveau** de Kubernetes. Il décide **quoi faire** et supervise l’ensembl
 | kube-controller-mgr  |
 -----------------------
 
-Composant	         Rôle
+Composant	                                                                                Rôle
 - kube-apiserver = 	Point d’entrée principal du cluster. Toutes les commandes (kubectl, etc.) passent par lui. Il communique avec les autres composants via une API REST.
 - etcd	 = Base de données clé-valeur distribuée qui stocke l’état complet du cluster (configurations, états des pods, secrets…).
 - kube-scheduler = Décide où les nouveaux pods doivent être déployés (sur quel nœud), en fonction des ressources disponibles et des contraintes.
@@ -53,5 +53,16 @@ Ce sont les **serveurs qui exécutent réellement les applications**.
 - `kubelet` : agent sur chaque nœud, communique avec le control plane
 - `kube-proxy` : gère la connectivité réseau entre Pods
 - **Runtime de conteneur** (ex : Docker, containerd) : exécute les conteneurs
+
+-----------------------
+|    Worker Nodes      |
+|----------------------|
+| kubelet              |
+| kube-proxy           |
+| Container Runtime    |
+| (pods & containers)  |
+------------------------
+
+
 
 ---
