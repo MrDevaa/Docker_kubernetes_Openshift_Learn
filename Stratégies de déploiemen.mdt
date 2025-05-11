@@ -1,8 +1,5 @@
 # Stratégies de Déploiement Kubernetes
 
-> ⚠️ Ce document est une traduction automatique depuis l'anglais.
-
-## Vue d'ensemble
 
 Une **stratégie de déploiement Kubernetes** définit le cycle de vie d'une application pour atteindre et maintenir un état configuré de manière automatisée. Des stratégies efficaces minimisent les risques lors des mises à jour.
 
@@ -141,7 +138,3 @@ Une version “fantôme” traite le trafic réel sans répondre aux utilisateur
 - **Recreate** est suffisant si les interruptions sont acceptables.
 
 ---
-
-## Licence
-
-Ce document est librement réutilisable à des fins pédagogiques.
