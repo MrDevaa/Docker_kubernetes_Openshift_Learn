@@ -97,6 +97,9 @@ Un petit groupe d’utilisateurs teste la nouvelle version avant déploiement gl
 
 ## 5. Stratégie de Test A/B
 
+![A/B Testing](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/2qr5RL7vRHmq-US-7_R5jQ_00cb25ca0f5748569d238f17d071c9f1_AB-Testing.png?expiry=1747094400000&hmac=ob6Gol2U0y-bcvP7kHpWeo9cCIqpqeK3SPQmZcK8mG4)
+
+
 ### Description
 Deux versions différentes sont testées sur des groupes d’utilisateurs spécifiques.
 
