@@ -79,6 +79,9 @@ Deux environnements (bleu : actuel, vert : nouveau) sont maintenus. Le trafic es
 
 ## 4. Stratégie Canary
 
+![Canary Strategy](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/0WrU-4r7Qbqq1PuK-3G6Kg_6ca8301e22aa4901867272f13d0f43f1_Canary-Strategy.png?expiry=1747094400000&hmac=77rplKnkRF5e5TMBCCkylTjDffTMKEzpoauem-Fsphg)
+
+
 ### Description
 Un petit groupe d’utilisateurs teste la nouvelle version avant déploiement global.
 
