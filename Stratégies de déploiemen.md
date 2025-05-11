@@ -62,6 +62,9 @@ Chaque Pod est mis à jour un à un de v1 vers v2 sans interruption majeure du s
 
 ## 3. Stratégie Bleu/Vert
 
+![Recreate Strategy]([https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/S0OHGQciTMiDhxkHIuzIZw_59fd9b955e3749cd8653f50a997075f1_Recreate-Strategy.png?expiry=1747094400000&hmac=a0J5ICSXE1X3Je1Hg0juSwkDoGqqQec255iR-yWpGko](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/NFTOHT_BSvmUzh0_wfr5jw_81599343d2f2432493a079dd15427cf1_Blue-green-strategy.png?expiry=1747094400000&hmac=bdB3sbSC0XMALLz_DVztBWXIWDaap7hL_VCnekfdbLs))
+
+
 ### Description
 Deux environnements (bleu : actuel, vert : nouveau) sont maintenus. Le trafic est basculé après tests.
 
