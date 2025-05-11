@@ -28,6 +28,9 @@ Vous pouvez utiliser une ou plusieurs stratégies combinées selon le contexte.
 
 ## 1. Stratégie de Recréation
 
+![Texte alternatif]([URL_DE_L_IMAGE](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/S0OHGQciTMiDhxkHIuzIZw_59fd9b955e3749cd8653f50a997075f1_Recreate-Strategy.png?expiry=1747094400000&hmac=a0J5ICSXE1X3Je1Hg0juSwkDoGqqQec255iR-yWpGko))
+
+
 ### Description
 Tous les Pods de la version actuelle sont arrêtés avant de lancer les nouveaux Pods avec la nouvelle version.
 
