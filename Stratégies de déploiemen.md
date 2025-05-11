@@ -115,6 +115,9 @@ Deux versions différentes sont testées sur des groupes d’utilisateurs spéci
 
 ## 6. Stratégie de l’Ombre
 
+![Shadow Strategy](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/xJnAA_d8T8GZwAP3fP_BRw_e7f8f2808ba44abe850a8d234b0567f1_Shadow-Strategy.png?expiry=1747094400000&hmac=SRactR7H8Wm3qzlp_6m3I5aBq-k_Ma4-3A2gia2s_A0)
+
+
 ### Description
 Une version “fantôme” traite le trafic réel sans répondre aux utilisateurs.
 
