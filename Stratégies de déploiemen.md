@@ -45,6 +45,8 @@ Tous les Pods de la version actuelle sont arrêtés avant de lancer les nouveaux
 
 ## 2. Stratégie Roulante (Rolling Update)
 
+![Recreate Strategy](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/X2UzR6YmTGSlM0emJmxkkw_d9be2366ede249569c7c574db5d75cf1_Rolling-Ramped-Strategy.png?expiry=1747094400000&hmac=_47bWUQYaY8MZgc5dNlbWm25fghEeC9uD4wBgFpyr6k)
+
 ### Description
 Chaque Pod est mis à jour un à un de v1 vers v2 sans interruption majeure du service.
 
