@@ -1,25 +1,25 @@
-# 📘 Glossary: Managing Applications with Kubernetes
+# 📘 Glossaire : Gestion des Applications avec Kubernetes
 
-Un glossaire des principaux termes liés à la gestion d'applications avec Kubernetes :
+Un glossaire des principaux termes liés à la gestion des applications dans Kubernetes :
 
-| **Term**                        | **Definition** |
-|----------------------------------|----------------|
-| **Cluster Autoscaler (CA)**      | An API resource that autoscales the cluster itself, increasing and decreasing the number of available nodes that pods can run on. |
-| **Config Map**                   | An API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume. |
-| **Horizontal Pod Autoscaler (HPA)** | An API resource that automatically scales the number of Pod replicas based on targeted CPU utilization or custom metric targets. |
-| **Linguistic Analysis**          | Detects the tone in a given text. |
-| **IBM Cloud Catalog**            | Provides various Services that range from visual recognition to natural language processing and creating chatbots. |
-| **Persistent Volume (PV)**       | An API object that represents a piece of storage in the cluster. Available as a general, pluggable resource that persists beyond the lifecycle of any individual Pod. |
-| **Persistent Volume Claim (PVC)**| Claims storage resources defined in a PersistentVolume so that it can be mounted as a volume in a container. |
-| **Rolling Updates**              | Provide a way to roll out application changes in an automated and controlled fashion throughout your pods. Rolling updates work with pod templates such as deployments. Rolling updates allow for rollback if something goes wrong. |
-| **Secrets**                      | Stores sensitive information, such as passwords, OAuth tokens, and ssh keys. |
-| **Service Binding**              | The process needed to consume external Services or backing Services, including REST APIs, databases, and event buses in your applications. |
-| **Tone Analyzer Service**        | Used for explaining service binding. This IBM Cloud Service uses linguistic analysis to detect tone in a given text. |
-| **Vertical Pod Autoscaler (VPA)**| An API resource that adds resources to an existing machine. A VPA lets you scale a service vertically within a cluster. |
-| **Volume**                       | A directory containing data, accessible to multiple containers in a Pod. |
-| **Volume Mount**                 | Mounting of the declared volume into a container in the same Pod. |
-| **Volume Plugin**                | Enables integration of storage within a Pod. |
+| **Terme**                             | **Définition** |
+|--------------------------------------|----------------|
+| **Cluster Autoscaler (CA)**          | Ressource de l’API qui ajuste automatiquement la taille du cluster en augmentant ou en diminuant le nombre de nœuds disponibles pour l’exécution des pods. |
+| **ConfigMap**                        | Objet de l’API utilisé pour stocker des données non sensibles sous forme de paires clé-valeur. Les pods peuvent consommer des ConfigMaps comme variables d’environnement, arguments en ligne de commande ou fichiers de configuration montés dans un volume. |
+| **Horizontal Pod Autoscaler (HPA)**  | Ressource de l’API qui ajuste automatiquement le nombre de réplicas de pods en fonction de l’utilisation du CPU ou d’autres métriques personnalisées. |
+| **Analyse linguistique**             | Détecte le ton émotionnel dans un texte donné. |
+| **Catalogue IBM Cloud**              | Propose divers services allant de la reconnaissance visuelle à l’analyse du langage naturel et à la création de chatbots. |
+| **Volume Persistant (PV)**           | Objet de l’API représentant un espace de stockage dans le cluster. Il s’agit d’une ressource générale et modulable qui persiste au-delà du cycle de vie des pods. |
+| **Revendication de Volume Persistant (PVC)** | Permet de demander des ressources de stockage définies dans un Volume Persistant afin qu’elles puissent être montées dans un conteneur. |
+| **Mises à jour progressives (Rolling Updates)** | Permettent de déployer des modifications d’application de manière contrôlée et automatisée sur les pods. Elles fonctionnent avec des modèles de pods comme les déploiements et permettent un retour en arrière en cas de problème. |
+| **Secrets**                          | Stockent des informations sensibles comme des mots de passe, des tokens OAuth ou des clés SSH. |
+| **Liaison de service (Service Binding)** | Processus permettant de connecter une application à des services externes (API REST, bases de données, etc.) en fournissant automatiquement les informations de configuration nécessaires. |
+| **Service Tone Analyzer**            | Service d’IBM Cloud utilisant l’analyse linguistique pour détecter les émotions dans un texte, souvent utilisé pour illustrer la liaison de service. |
+| **Vertical Pod Autoscaler (VPA)**    | Ressource de l’API qui ajuste automatiquement les ressources (CPU, mémoire) d’un pod existant, permettant une mise à l’échelle verticale. |
+| **Volume**                           | Répertoire contenant des données, accessible par plusieurs conteneurs dans un même pod. |
+| **Montage de Volume (Volume Mount)** | Action de monter un volume déclaré dans un conteneur appartenant au même pod. |
+| **Plugin de Volume**                 | Permet l’intégration du stockage dans un pod via des plugins spécifiques au type de volume. |
 
 ---
 
-🛠️ **Astuce :** Ces concepts sont fondamentaux pour concevoir des applications résilientes, évolutives et sécurisées dans un environnement Kubernetes.
+🛠️ **Astuce :** Comprendre ces termes est essentiel pour concevoir des applications évolutives, fiables et sécurisées dans Kubernetes.
