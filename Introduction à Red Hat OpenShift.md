@@ -388,3 +388,40 @@ Supposons que tu déploies une **nouvelle version** de ton microservice de comma
 
 ---
 
+# 🧭 Architecture simplifiée d'Istio avec Service Mesh
+
+```plaintext
+                    +---------------------+
+                    |    Istio Control    |
+                    |       Plane         |
+                    |   (Pilot, Mixer,    |
+                    |    Citadel, etc.)   |
+                    +----------+----------+
+                               |
+     -------------------------------------------------------
+    |                       Service Mesh                    |
+    |                                                       |
+    |  +-----------+     +-----------+     +-----------+    |
+    |  |  UI Pod   |     | Order Pod |     | Inventory |    |
+    |  | +-------+ |     | +-------+ |     |   Pod     |    |
+    |  | | Envoy |<------>| Envoy |<------>| +-------+ |    |
+    |  | +-------+ |     | +-------+ |     | | Envoy | |    |
+    |  +-----------+     +-----------+     | +-------+ |    |
+    |                                      +-----------+    |
+    |                                             |         |
+    |                                       +-----------+   |
+    |                                       |  Database  |   |
+    |                                       +-----------+   |
+    |                                                       |
+    -------------------------------------------------------
+
+Fonctionnalités d'Istio :
+- 🔁 **Gestion du trafic** : routage fin (canary, A/B testing, retries, failover)
+- 🔐 **Sécurité** : mTLS, authentification, autorisation
+- 📊 **Observabilité** : latence, trafic, erreurs, saturation (L.T.E.S)
+- 📏 **Application de politiques** : quotas, limites de débit, contrôle d’accès
+
+Chaque microservice communique à travers son **proxy Envoy**,
+qui intercepte et gère le trafic via les règles configurées par le **Plan de Contrôle Istio**.
+
+
