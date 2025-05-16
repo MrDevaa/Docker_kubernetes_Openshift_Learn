@@ -117,3 +117,51 @@ Ci-dessous se trouve un diagramme de flux de travail de base montrant comment un
 
 Les déclencheurs de construction dans OpenShift fournissent un mécanisme robuste pour automatiser le processus de construction et de déploiement. En utilisant des déclencheurs de webhook, de changement d’image et de changement de configuration, vous pouvez garantir que vos applications sont continuellement construites et mises à jour en fonction des dernières modifications et événements. Cette automatisation conduit à des cycles de développement plus efficaces, des temps de réponse plus rapides aux mises à jour ou problèmes, et une réduction de la charge manuelle. Ainsi, contribuant finalement à un flux de travail de développement plus rationalisé et fiable.
 
+---
+
+## Exemples concretes : 
+
+1. C’est quoi un déclencheur de build ?
+Un déclencheur de build dans OpenShift, c’est un mécanisme automatique qui lance la construction (build) de ton application quand un événement précis arrive. L’idée, c’est d’éviter de devoir lancer manuellement la construction à chaque changement, et de garder ton application toujours à jour.
+
+2. Pourquoi c’est important ?
+Automatiser les builds permet :
+
+De construire et déployer plus vite les mises à jour.
+
+D’éviter les erreurs humaines (pas besoin de lancer manuellement).
+
+D’avoir un processus plus fluide et efficace.
+
+3. Quels types de déclencheurs y’a-t-il ?
+Il y en a trois principaux :
+
+a) Déclencheur Webhook
+C’est un système qui écoute des événements extérieurs, souvent depuis un dépôt de code comme GitHub.
+
+Quand tu pousses un nouveau code, GitHub envoie une notification (requête HTTP) à OpenShift.
+
+OpenShift déclenche alors la construction automatiquement.
+
+Exemple concret : Tu modifies ton code sur GitHub → GitHub prévient OpenShift → OpenShift reconstruit ton app avec la nouvelle version.
+
+b) Déclencheur de changement d’image
+OpenShift surveille une image Docker (par exemple une image Node.js que tu utilises comme base).
+
+Quand une nouvelle version de cette image est publiée, ça déclenche une reconstruction de ton application pour utiliser la dernière version.
+
+Utilité : Ton application reste toujours à jour avec les dernières versions des images (par exemple pour corriger des failles de sécurité).
+
+c) Déclencheur de changement de configuration
+OpenShift surveille les fichiers ou paramètres de configuration liés au build (BuildConfig).
+
+Quand tu modifies cette configuration (exemple : changer le dépôt source ou les paramètres du build), OpenShift relance une construction.
+
+Pourquoi ? Pour que les modifications dans la configuration soient prises en compte immédiatement.
+
+4. Résumé des bénéfices
+Tu gagnes du temps car les builds se lancent automatiquement.
+
+Ton app est toujours à jour, que ce soit côté code, images ou configuration.
+
+Tu peux te concentrer sur le développement sans te soucier des déploiements manuels.
