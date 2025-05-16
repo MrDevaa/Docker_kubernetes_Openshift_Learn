@@ -131,3 +131,150 @@ Le cœur du processus. Il définit :
 - Utilisez **ImageStream** pour abstraction des images
 - Activez les **triggers** pour automatiser les mises à jour
 
+---
+
+# 📦 Introduction aux Opérateurs Kubernetes
+
+Ce document présente les **opérateurs Kubernetes**, un puissant mécanisme permettant d'automatiser la gestion d'applications complexes dans un cluster.
+
+---
+
+## 🔁 1. Qu’est-ce qu’un opérateur ?
+
+Un **opérateur Kubernetes** est un **contrôleur personnalisé** qui étend l’API de Kubernetes pour automatiser le **déploiement, la gestion, la mise à jour et la surveillance** d’applications complexes.
+
+Il agit comme un **expert humain automatisé**, capable de :
+
+- Déployer une application
+- Superviser son état
+- Réagir aux incidents (crash, scaling, etc.)
+- Mettre à jour, sauvegarder ou restaurer automatiquement
+
+---
+
+## ⚙️ 2. Comment fonctionne un opérateur ?
+
+Un opérateur :
+
+- Fonctionne dans un **pod Kubernetes**
+- Interagit avec le **Kubernetes API Server**
+- Utilise deux composants principaux :
+  - Une **CRD (Custom Resource Definition)** : définit une nouvelle ressource dans Kubernetes
+  - Un **contrôleur personnalisé** : surveille l’état et applique les changements nécessaires
+
+> 🛠️ Exemple : créer une ressource `App` via une CRD peut automatiquement créer un `Deployment`, un `Service` et un `Secret`.
+
+---
+
+## 🧠 3. Opérateurs humains vs logiciels
+
+| Opérateur Humain                    | Opérateur Logiciel                        |
+|------------------------------------|-------------------------------------------|
+| Admin système                      | Code exécutable                           |
+| Connaît les procédures manuellement | Automatise ces procédures                 |
+| Doit intervenir régulièrement      | S’exécute en continu sans intervention    |
+
+---
+
+## 🌐 4. Différence avec les brokers de services
+
+| Fonction                            | Broker de service       | Opérateur Kubernetes     |
+|-------------------------------------|--------------------------|---------------------------|
+| Installation                        | Oui                      | Oui                       |
+| Tâches du "jour 2" (update, scale…) | ❌ Non                   | ✅ Oui                    |
+| Surveillance continue               | ❌ Non                   | ✅ Oui                    |
+
+---
+
+## 📦 5. Qu’est-ce qu’une CRD (Custom Resource Definition) ?
+
+- Permet d’étendre l’API Kubernetes avec des **ressources personnalisées**
+- Se manipule comme les ressources natives : `kubectl get <crd-name>`
+- Utilisée pour décrire le **"quoi faire"**
+
+---
+
+## 🔄 6. Qu’est-ce qu’un contrôleur personnalisé ?
+
+- C’est la **logique de traitement** d’un opérateur
+- Il observe les CRDs créées
+- Il agit automatiquement pour **concilier l’état actuel et l’état désiré**
+
+---
+
+## 🔧 7. Le modèle opérateur
+
+Un opérateur est la combinaison de :
+
+- **CRD** : la ressource déclarative
+- **Contrôleur** : la logique métier associée
+
+Il permet d’**étendre Kubernetes** avec ses propres API et de gérer des applications de manière déclarative.
+
+---
+
+## 🧰 8. Operator Framework
+
+Outils et services autour des opérateurs :
+
+- **Operator SDK** : création d’opérateurs avec Go, Ansible ou Helm
+- **OLM (Operator Lifecycle Manager)** : gestion du cycle de vie des opérateurs
+- **Operator Hub** : catalogue public d’opérateurs prêts à installer
+
+---
+
+## 📈 9. Modèle de maturité des opérateurs
+
+| Niveau        | Description                                      |
+|---------------|--------------------------------------------------|
+| **Basique**   | Déploiement manuel                               |
+| **Intermédiaire** | Mise à jour automatique, surveillance partielle |
+| **Avancé (Autopilot)** | Ajustements dynamiques en fonction de l’état |
+
+---
+
+## ✅ 10. En résumé
+
+- Les **opérateurs** automatisent les tâches complexes dans Kubernetes.
+- Ils sont composés de **CRDs + contrôleurs**.
+- Ils peuvent être développés avec des outils comme **Operator SDK**.
+- Ils s’installent via **Operator Hub** et sont gérés par **OLM**.
+- Leur **maturité** dépend du niveau d’automatisation fourni.
+
+---
+
+      ┌────────────────────────────┐
+      │     Operator Hub (UI)     │
+      │ (trouver/installer opé.)  │
+      └────────────┬──────────────┘
+                   │
+                   ▼
+      ┌────────────────────────────┐
+      │  Operator Lifecycle Mgmt   │
+      │  (OLM - gère install/màj)  │
+      └────────────┬──────────────┘
+                   │
+                   ▼
+        ┌────────────────────┐
+        │      OPÉRATEUR     │  ◄─────────────┐
+        │ (Pod avec logique) │                │
+        └────────┬───────────┘                │
+                 │                            │
+         Surveille & gère                     │
+                 ▼                            │
+    ┌────────────────────────────┐            │
+    │   Ressource Personnalisée  │ (CR)       │
+    │   via CRD (CustomResource) │            │
+    └────────┬───────────┬───────┘            │
+             │           │                    │
+             ▼           ▼                    │
+      Déploiement   ConfigMap, etc.           │
+             ▲                                │
+             │                                │
+        ┌────────────┐                        │
+        │ Contrôleur │  ◄────────────┐        │
+        │ Personnalisé│              │        │
+        └────────────┘              ▼        ▼
+                             État souhaité vs État réel
+                           (Réconciliation automatique)
+
