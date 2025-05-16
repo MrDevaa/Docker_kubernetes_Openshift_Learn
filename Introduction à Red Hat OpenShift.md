@@ -278,3 +278,113 @@ Outils et services autour des opérateurs :
                              État souhaité vs État réel
                            (Réconciliation automatique)
 
+---
+
+# 📘 Introduction à Istio et le Service Mesh
+
+## 🔍 Qu’est-ce qu’un **Service Mesh** ?
+
+Un **Service Mesh** (maillage de services) est une **couche d'infrastructure** qui gère **la communication entre les microservices** dans une application. Il rend cette communication :
+
+- **Fiable**
+- **Sécurisée**
+- **Observable**
+
+Sans Service Mesh, chaque microservice doit gérer lui-même les mécanismes de sécurité, de résilience, etc.  
+Avec un service mesh, ces responsabilités sont centralisées.
+
+---
+
+## 🧠 Introduction à **Istio**
+
+**Istio** est une implémentation populaire de **service mesh**, principalement utilisée avec **Kubernetes**.
+
+Il permet de :
+
+- **Contrôler le trafic** (ex : déploiement progressif de nouvelles versions)
+- **Sécuriser les échanges** entre services (authentification, autorisation, chiffrement)
+- **Observer et surveiller** les communications (logs, métriques, traces)
+- **Appliquer des politiques** de résilience et de gouvernance
+
+---
+
+## 🧱 Les 4 concepts clés d’**Istio**
+
+1. **Connexion (Traffic Management)**  
+   - Déploiements canaris (envoyer 5 % du trafic vers une nouvelle version)  
+   - Tests A/B  
+   - Répartition de charge
+
+2. **Sécurité (Security)**  
+   - Authentification mutuelle (mTLS)  
+   - Autorisation des accès  
+   - Chiffrement du trafic réseau
+
+3. **Application (Policy Enforcement)**  
+   - Contrôle d’accès  
+   - Limites de requêtes  
+   - Quotas, etc.
+
+4. **Observabilité (Telemetry)**  
+   - Latence (temps de réponse)  
+   - Trafic (nombre de requêtes)  
+   - Erreurs  
+   - Saturation (ressources)
+
+---
+
+## 🧩 Architecture Istio : Plan de contrôle vs plan de données
+
+- **Plan de données** :  
+  Gère le trafic réseau réel. Il utilise un proxy **Envoy** déployé à côté de chaque microservice (sidecar).
+
+- **Plan de contrôle** :  
+  Configure et met à jour dynamiquement les proxies en fonction de l’état du cluster et des règles définies.
+
+---
+
+## 💡 Pourquoi utiliser Istio avec des **microservices** ?
+
+### ✅ Avantages :
+
+- Déploiement indépendant de chaque composant
+- Meilleure scalabilité
+- Sécurité renforcée
+- Routage intelligent (canari, A/B)
+- Visibilité complète du trafic
+
+### ❌ Défis :
+
+- Complexité technique
+- Surcharge réseau avec les sidecars
+- Courbe d'apprentissage importante
+
+---
+
+## 📈 Surveillance : Les **4 métriques fondamentales** d’Istio
+
+1. **Latence** – Temps de réponse d’un service
+2. **Trafic** – Volume de requêtes reçues
+3. **Erreurs** – Nombre ou taux de réponses incorrectes
+4. **Saturation** – Charge du système (CPU, mémoire, etc.)
+
+---
+
+## 🔐 Sécurité avec Istio
+
+Istio chiffre les communications entre services (via **mTLS**) pour se protéger des attaques comme l’**attaque de l’homme du milieu**.  
+Il peut aussi empêcher un service d’accéder à un autre s’il n’en a pas l’autorisation.
+
+---
+
+## 🧪 Exemple de cas d’usage
+
+Supposons que tu déploies une **nouvelle version** de ton microservice de commandes :
+
+- Istio peut envoyer **5 %** du trafic à la nouvelle version.
+- Ensuite, augmenter progressivement à **50 %**, puis **100 %**.
+- Permet de tester sans risquer une panne globale.
+- Tu peux également tester différentes versions via un test **A/B**.
+
+---
+
